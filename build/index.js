@@ -23,8 +23,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Local 1857 Events Block – hello from the editor!", "events-block"));
+function Edit(props) {
+  const events = props.attributes.events.slice();
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "kcls-recent-news-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "kcls-voice-editor-news-container"
+  }, events && events.length === 0 && "No Upcoming Events", events && events.length > 0 ? events.map((event, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: index === 0 ? "kcls-voice-editor-news kcls-voice-editor-news-main" : "kcls-voice-editor-news"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "kcls-recent-news-editor-heading"
+    }, event.title), index === 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, event.description));
+  }) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "kcls-editor-news-overlay"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "This automatically pulls the most recent five posts, and is not editable.")))));
 }
 
 /***/ }),
