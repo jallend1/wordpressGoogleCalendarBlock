@@ -1,0 +1,1 @@
+{"version":3,"file":"./style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://events-block/./src/style.scss"],"sourcesContent":[".wp-block-local-1857-events-block {\n\tbackground-color: #21759b;\n\tcolor: #fff;\n\tpadding: 2px;\n}\n"],"names":[],"sourceRoot":""}

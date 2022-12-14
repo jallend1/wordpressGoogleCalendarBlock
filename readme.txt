@@ -1,5 +1,5 @@
 === Local 1857 Events Block ===
-Contributors:      The WordPress Contributors
+Contributors:      Two Dogs Web Development
 Tags:              block
 Tested up to:      6.1
 Stable tag:        0.1.0

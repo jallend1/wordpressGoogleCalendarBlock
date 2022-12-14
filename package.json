@@ -2,7 +2,7 @@
 	"name": "events-block",
 	"version": "0.1.0",
 	"description": "Imports upcoming events from Google Calendar and renders them on KCLS Voice",
-	"author": "The WordPress Contributors",
+	"author": "Two Dogs Web Development",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

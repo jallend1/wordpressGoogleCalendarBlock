@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://events-block/./src/editor.scss"],"sourcesContent":[".wp-block-local-1857-events-block {\n\tborder: 1px dotted #f00;\n}\n"],"names":[],"sourceRoot":""}
