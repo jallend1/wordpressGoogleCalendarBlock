@@ -1,17 +1,13 @@
 <?php 
 $events = $attributes['events'];
-
 ob_start(); 
-	// $events = kcls_get_events('https://calendar.google.com/calendar/ical/1857comms%40gmail.com/public/basic.ics');
-	if(count($events) === 0){ ?>
+if(count($events) === 0){ ?>
 	<h4 class="kcls-events-none">
 		No events have been found at this time. If you believe this is in error, please reach out to the eBoard for more details.
 	</h4>
 <?php } else { ?>
 		<div class="kcls-event-container">	
 			<?php foreach($events as $event): 
-				// $eventStartDate = parse_ics_date($event['DTSTART']);
-				// $eventEndDate = parse_ics_date($event['DTEND']);
 				$eventStartDate = ($event['start']);
 				$eventEndDate = ($event['end']);
 				?> 
@@ -36,11 +32,11 @@ ob_start();
 						<?php echo str_replace("<br>", "", $event['description']); ?>
 					</div>
 					<footer class="kcls-event-logo">
-						<img src="<?php echo getLocal1857EventImage($event['SUMMARY']); ?>" alt="<?php echo $event['SUMMARY']; ?>" />					
+						<img src="<?php echo getLocal1857EventImage($event['title']); ?>" alt="<?php echo $event['title']; ?>" />					
 					</footer>
 				</div>
 			<?php endforeach; ?>
 		</div>
-			<?php } ?>
-		<?php return ob_end_flush(); ?>
+<?php } ?>
+<?php return ob_end_flush(); ?>
 		
