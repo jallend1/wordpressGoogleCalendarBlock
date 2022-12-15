@@ -26,17 +26,17 @@ __webpack_require__.r(__webpack_exports__);
 function Edit(props) {
   const events = props.attributes.events.slice();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "kcls-recent-news-block"
+    className: "local1857-events-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "kcls-voice-editor-news-container"
-  }, events && events.length === 0 && "No Upcoming Events", events && events.length > 0 ? events.map((event, index) => {
+    className: "local1857-editor-events-container"
+  }, events && events.length === 0 && "No Upcoming Events", events && events.length > 0 ? events.map(event => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: index === 0 ? "kcls-voice-editor-news kcls-voice-editor-news-main" : "kcls-voice-editor-news"
+      class: "kcls-event"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      className: "kcls-recent-news-editor-heading"
-    }, event.title), index === 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."));
+      className: "kcls-event-title"
+    }, event.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."));
   }) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "kcls-editor-news-overlay"
+    className: "local1857-editor-events-overlay"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "This automatically pulls the closest three events, and is not editable.")))));
 }
 

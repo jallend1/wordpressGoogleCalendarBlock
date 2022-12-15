@@ -5,37 +5,25 @@ export default function Edit(props) {
 	const events = props.attributes.events.slice();
 	return (
 		<div {...useBlockProps()}>
-			<div className="kcls-recent-news-block">
-				<div className="kcls-voice-editor-news-container">
+			<div className="local1857-events-block">
+				<div className="local1857-editor-events-container">
 					{events && events.length === 0 && "No Upcoming Events"}
 					{/* Slices the latest five blog entries and renders them into the editor */}
 					{events && events.length > 0
-						? events.map((event, index) => {
+						? events.map((event) => {
 								return (
-									<div
-										class={
-											index === 0
-												? "kcls-voice-editor-news kcls-voice-editor-news-main"
-												: "kcls-voice-editor-news"
-										}
-									>
-										<h3 className="kcls-recent-news-editor-heading">
-											{event.title}
-										</h3>
-										{index === 0 && (
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-												sed do eiusmod tempor incididunt ut labore et dolore
-												magna aliqua. Ut enim ad minim veniam, quis nostrud
-												exercitation ullamco laboris nisi ut aliquip ex ea
-												commodo consequat.
-											</p>
-										)}
+									<div class="kcls-event">
+										<h3 className="kcls-event-title">{event.title}</h3>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua.
+										</p>
 									</div>
 								);
 						  })
 						: null}
-					<div className="kcls-editor-news-overlay">
+					<div className="local1857-editor-events-overlay">
 						<h3>
 							This automatically pulls the closest three events, and is not
 							editable.
