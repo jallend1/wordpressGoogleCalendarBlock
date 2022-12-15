@@ -1,5 +1,105 @@
+@import "colors";
+
 .wp-block-local-1857-events-block {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;
+}
+
+.kcls-events > div > .kcls-section-title > div {
+	display: flex;
+	h2 {
+		padding-right: 2rem;
+	}
+}
+
+.kcls-event-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+	padding: 0 2rem;
+	margin: 1rem auto;
+	justify-content: space-around;
+}
+
+.kcls-events-none {
+	text-align: center;
+	padding: 2rem 0;
+}
+
+.kcls-event {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+	border-radius: 15px;
+	box-shadow: 15px 15px 15px #071420;
+	color: #071420;
+	background-color: #fff;
+	max-width: 350px;
+	text-align: center;
+	margin: 1rem;
+}
+
+.kcls-event-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: $kcls-blue 1px solid;
+	width: 100%;
+	padding-bottom: 1rem;
+}
+
+.kcls-event-header-left {
+	display: flex;
+	flex-direction: column;
+}
+
+.kcls-event-header-date {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	background-color: $kcls-green;
+	color: #fff;
+	border-radius: 15px;
+}
+
+.kcls-event-header-date-day {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.kcls-event-header-date-month {
+	font-size: 0.75rem;
+}
+
+.kcls-event {
+	.kcls-event-body {
+		padding: 1rem;
+		line-height: 1.35rem;
+		font-size: 0.9rem;
+	}
+
+	footer {
+		width: 100%;
+		border-top: solid 1px $kcls-blue;
+		padding-top: 1rem;
+	}
+}
+
+.kcls-event-logo {
+	img {
+		max-width: 30px;
+	}
+}
+
+.kcls-event-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: $kcls-blue;
+}
+
+.kcls-event-time {
+	padding-top: 0.75rem;
 }
