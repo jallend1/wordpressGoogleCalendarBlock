@@ -22,7 +22,15 @@ export default function Edit(props) {
 										<h3 className="kcls-recent-news-editor-heading">
 											{event.title}
 										</h3>
-										{index === 0 && <p>{event.description}</p>}
+										{index === 0 && (
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+												sed do eiusmod tempor incididunt ut labore et dolore
+												magna aliqua. Ut enim ad minim veniam, quis nostrud
+												exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat.
+											</p>
+										)}
 									</div>
 								);
 						  })

@@ -15,6 +15,31 @@
 
 include_once 'iCalEasyReader.php';
 
+function local1857_standardizeStartTime($arr){
+	// All day events have their start time stored as an array, while events with a start time have it stored as a string
+	return is_array($arr) ? $arr['value'] : $arr;
+}
+
+function local1857_convertICStoDateTime($icsDate){
+	$eventDate = local1857_standardizeStartTime($icsDate);
+	// Convert the date from the ics file to a DateTime object
+	$year = substr($eventDate, 0, 4);
+	$month = substr($eventDate, 4, 2);
+	$day = substr($eventDate, 6, 2);
+	$eventDateTime = new DateTime($year . '-' . $month . '-' . $day);
+	return $eventDateTime;
+}
+
+function getLocal1857EventImage($eventName){
+	$eventImage = '';
+	if(strpos($eventName, 'Listening Session') !== false): $eventImage = 'assets/listening.png';
+	elseif (strpos($eventName, 'Executive Board') !== false): $eventImage = 'assets/meeting.png';
+	elseif(strpos($eventName, 'General Membership Meeting') !== false): $eventImage = 'assets/discussion.png';
+	else: $eventImage = 'assets/local1857logo.png';
+	endif; 
+	return plugin_dir_url( __FILE__ ) . $eventImage;
+}
+
 function parse_ics_date($date){
 	if(is_string($date)){
 		$calendarDate = substr($date, 0, 8);
@@ -25,11 +50,32 @@ function parse_ics_date($date){
 	}
 }
 
+function local1857_filter_passed_events($event){
+	// Filter out events that have already passed
+	$currentDateTime = new DateTime();
+	$eventDateTime = convertICStoDateTime($event['DTSTART']);
+	$eventDistance = date_diff($eventDateTime, $currentDateTime)->format('%r%a');
+	return $eventDistance <= 0;
+}
+
+function local1857_sort_events($a, $b){
+	$currentDateTime = new DateTime();
+	if($a['DTSTART'] && $b['DTSTART']) {
+		// Converts ICS date to PHP DateTime object
+		$firstEvent = convertICStoDateTime($a['DTSTART']);
+		$secondEvent = convertICStoDateTime($b['DTSTART']);
+		// Sort the array by distance to the current date
+		$firstEventDistance = date_diff($firstEvent, $currentDateTime)->format('%r%a');
+		$secondEventDistance = date_diff($secondEvent, $currentDateTime)->format('%r%a');
+		return $secondEventDistance <=> $firstEventDistance ;
+	}
+}
+
 function local1857_get_events($url){
 	$ics = new local1857_iCalEasyReader();
 	$lines = $ics->load(file_get_contents($url));
-	usort($lines['VEVENT'], 'kcls_sort_events');
-	$filteredEvents = array_filter($lines['VEVENT'], 'filter_passed_events');	
+	usort($lines['VEVENT'], 'local1857_sort_events');
+	$filteredEvents = array_filter($lines['VEVENT'], 'local1857_filter_passed_events');	
 	$latestEvents = array_slice($filteredEvents, 0, 4);
 	return $latestEvents;
 }
