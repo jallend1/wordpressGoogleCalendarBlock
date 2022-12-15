@@ -37,7 +37,7 @@ export default function Edit(props) {
 						: null}
 					<div className="kcls-editor-news-overlay">
 						<h3>
-							This automatically pulls the most recent five posts, and is not
+							This automatically pulls the closest three events, and is not
 							editable.
 						</h3>
 					</div>
