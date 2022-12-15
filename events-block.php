@@ -53,7 +53,7 @@ function parse_ics_date($date){
 function local1857_filter_passed_events($event){
 	// Filter out events that have already passed
 	$currentDateTime = new DateTime();
-	$eventDateTime = convertICStoDateTime($event['DTSTART']);
+	$eventDateTime = local1857_convertICStoDateTime($event['DTSTART']);
 	$eventDistance = date_diff($eventDateTime, $currentDateTime)->format('%r%a');
 	return $eventDistance <= 0;
 }
@@ -62,8 +62,8 @@ function local1857_sort_events($a, $b){
 	$currentDateTime = new DateTime();
 	if($a['DTSTART'] && $b['DTSTART']) {
 		// Converts ICS date to PHP DateTime object
-		$firstEvent = convertICStoDateTime($a['DTSTART']);
-		$secondEvent = convertICStoDateTime($b['DTSTART']);
+		$firstEvent = local1857_convertICStoDateTime($a['DTSTART']);
+		$secondEvent = local1857_convertICStoDateTime($b['DTSTART']);
 		// Sort the array by distance to the current date
 		$firstEventDistance = date_diff($firstEvent, $currentDateTime)->format('%r%a');
 		$secondEventDistance = date_diff($secondEvent, $currentDateTime)->format('%r%a');
