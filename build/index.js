@@ -109,7 +109,7 @@ function KCLSEventBlock() {
     text: "See All Events",
     className: "kcls-read-blog-button",
     url: "/meetings/"
-  }]]], ["local-1857/events-block"]]]];
+  }]]], ["local-1857/core-events-block"]]]];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "kcls-event-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(), {
@@ -241,7 +241,7 @@ function _extends() {
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"local-1857/events-block","version":"0.1.0","title":"Local 1857 Events Block","category":"widgets","icon":"smiley","description":"Imports upcoming events from Google Calendar and renders them on KCLS Voice","supports":{"html":false},"textdomain":"events-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"local-1857/core-events-block","version":"1.1.0","title":"Local 1857 Events (No Headings)","category":"widgets","icon":"smiley","description":"Imports upcoming events from Google Calendar and renders them on KCLS Voice","supports":{"html":false},"textdomain":"events-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

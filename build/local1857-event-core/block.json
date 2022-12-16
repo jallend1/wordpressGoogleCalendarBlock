@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "local-1857/core-events-block",
-  "version": "1.1.0",
-  "title": "Local 1857 Events (No Headings)",
+  "name": "local-1857/events-block",
+  "version": "0.1.0",
+  "title": "Local 1857 Events Block",
   "category": "widgets",
   "icon": "smiley",
   "description": "Imports upcoming events from Google Calendar and renders them on KCLS Voice",

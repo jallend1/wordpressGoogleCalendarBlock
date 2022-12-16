@@ -4,7 +4,7 @@
  * Description:       Imports upcoming events from Google Calendar and renders them on KCLS Voice
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Two Dogs Web Development
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,7 @@ function local1857_compile_events_data(){
 }
 
 function local_1857_events_block_block_init() {
+	// Registers just the core block itself that pulls from the Google Calendar, without any headings or buttons
 	register_block_type( __DIR__ . '/build' , 
 	['attributes' => array(
 				'events' => array(
@@ -105,8 +106,10 @@ function local_1857_events_block_block_init() {
 			)]
 	);
 
+	// Registers the all-encompassing block that includes the events block, as well as headings and a button
 	register_block_type('local1857/events-block', array(
 		'editor_script' => 'local1857-events-block',
+		'title' => 'Local 1857 Events',
 	));
 }
 

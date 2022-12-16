@@ -30,7 +30,7 @@ export default function KCLSEventBlock() {
 						],
 					],
 				],
-				["local-1857/events-block"],
+				["local-1857/core-events-block"],
 			],
 		],
 	];
