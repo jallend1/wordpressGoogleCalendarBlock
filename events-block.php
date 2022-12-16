@@ -104,6 +104,10 @@ function local_1857_events_block_block_init() {
 				),
 			)]
 	);
+
+	register_block_type('local1857/events-block', array(
+		'editor_script' => 'local1857-events-block',
+	));
 }
 
 add_action( 'init', 'local_1857_events_block_block_init' );
