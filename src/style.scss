@@ -14,10 +14,10 @@
 }
 
 .kcls-event-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
 	padding: 0 2rem;
 	margin: 1rem auto;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
