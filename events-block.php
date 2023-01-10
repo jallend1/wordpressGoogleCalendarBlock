@@ -76,7 +76,7 @@ function local1857_get_events($url){
 	$lines = $ics->load(file_get_contents($url));
 	usort($lines['VEVENT'], 'local1857_sort_events');
 	$filteredEvents = array_filter($lines['VEVENT'], 'local1857_filter_passed_events');	
-	$latestEvents = array_slice($filteredEvents, 0, 4);
+	$latestEvents = array_slice($filteredEvents, 0, 3);
 	return $latestEvents;
 }
 

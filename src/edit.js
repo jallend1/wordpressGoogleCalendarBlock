@@ -1,6 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps } from "@wordpress/block-editor";
 import "./editor.scss";
+
 export default function Edit(props) {
 	const events = props.attributes.events.slice();
 	return (
@@ -8,7 +9,6 @@ export default function Edit(props) {
 			<div className="local1857-events-block">
 				<div className="local1857-editor-events-container">
 					{events && events.length === 0 && "No Upcoming Events"}
-					{/* Slices the latest five blog entries and renders them into the editor */}
 					{events && events.length > 0
 						? events.map((event) => {
 								return (
