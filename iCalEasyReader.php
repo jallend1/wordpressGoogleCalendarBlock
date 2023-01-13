@@ -191,15 +191,20 @@ class local1857_iCalEasyReader
     public function concatItem($line)
     {
         $line = mb_substr( $line, 1 );
-        if (is_array( $this->_lastitem ))
+        if (is_array( $this->_lastitem) && array_key_exists( 'value', $this->_lastitem ))
         {
             $line = $this->transformLine( $this->_lastitem['value'] . $line );
             $this->_lastitem['value'] = $line;
         }
         else
         {
-            $line = $this->transformLine( $this->_lastitem . $line );
-            $this->_lastitem = $line;
+            if (!is_array( $this->_lastitem)) 
+            {
+                $line = $this->transformLine( $this->_lastitem . $line );
+                $this->_lastitem = $line;
+                
+            }
+            
         }
     }
 
